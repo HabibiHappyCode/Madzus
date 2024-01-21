@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+:root {
+    --bg-color: #ffec99;
+    --bg-color-2: #f5f5f5;
+    --font-color: #ae3ec9;
+    --font-family: 'Roboto', sans-serif;
+    --transition: all ease-in-out .3s;
+    --line-height: 1.7em;
+    --black-font: #666666;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.title {
+    font-family: var(--font-family);
+    font-size: 2em;
+    text-transform: uppercase;
+    color: var(--font-color);
+    text-align: center;
+    margin: 1em 0;
+}
+
+.all-sections {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+    padding: 0 3em;
+    flex-wrap: wrap;
+    transition: var(--transition);
+}
+
+.all-sections .section {
+    width: 32%;
+    height: auto;
+    background-color: var(--bg-color);
+    transition: var(--transition);
+    margin-bottom: 1.3em;
+    padding-bottom: .9em;
+    border-radius: 8px;
+}
+
+.all-sections .section .img {
+    width: 100%;
+    height: 30vh;
+    overflow: hidden;
+}
+
+.all-sections .section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.all-sections .section .img:hover img {
+    transform: scale(1.1)
+}
+
+.all-sections .section ul {
+    list-style: none;
+    text-align: center;
+}
+
+.all-sections .section ul li h3 {
+    font-family: var(--font-family);
+    color: var(--font-color);
+    text-transform: capitalize;
+    margin: .7em 0;
+}
+
+.all-sections .section ul li p {
+    max-width: 100%;
+    font-family: var(--font-family);
+    color: var(--black-font);
+    line-height: var(line);
+    margin: 0 auto;
+    line-height: var(--line-height);
+}
+
+.all-sections .section ul li p span {
+    color: var(--font-color)
+}
+
+.all-sections .section ul li a {
+    text-decoration: none;
+    padding: .9em 0;
+}
+
+@media screen and (max-width: 1028px) {
+    .all-sections .section {
+        width: 49%;
+    }
+}
+
+@media screen and (max-width: 728px) {
+    .all-sections {
+        padding: 1em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .title {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 541px) {
+    .all-sections .section {
+        width: 100%;
+    }
+}

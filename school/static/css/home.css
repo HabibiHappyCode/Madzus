@@ -1,0 +1,877 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+:root {
+    --bg-color: #ffec99;
+    --bg-color-2: #f5f5f5; 
+    --font-color: #ae3ec9;
+    --font-family: 'Roboto', sans-serif;
+    --transition: all ease-in-out .3s;
+    --line-height: 1.7em;
+    --black-font: #666666;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+.navbar {
+    position: sticky;
+    top: 0%;
+    background-color: var(--bg-color);
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+    box-shadow: 0 0 1em #ae3ec999;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.navbar .logo img {
+    width: 5em;
+    height: 5em;
+    transition: var(--transition);
+}
+
+.navbar .logo .name h1 {
+    font-family: var(--font-family);
+    color: var(--font-color);
+    text-transform: capitalize;
+    transition: var(--transition);
+}
+
+aside {
+    position: absolute;
+    top: 5em;
+    right: 0;
+    right: 100%;
+    background: var(--bg-color);
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+aside.active {
+    right: 0%;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside ul li {
+    padding: 1.6em;
+    width: 50%;
+    position: relative;
+    transform: translate(50%, 10%);
+}
+
+aside ul li::before {
+    content: "";
+    position: absolute;
+    transition: var(--transition);
+    width: 0%;
+    height: 4px;
+    left: 0;
+    bottom: 0;
+}
+
+aside ul li:hover:before {
+    background: var(--font-color);
+    width: 100%;
+}
+
+aside ul li a {
+    text-decoration: none;
+    font-family: var(--font-family);
+    color: var(--font-color);
+    font-size: 1.3em;
+}
+
+@media screen and (max-width: 702px) {
+    .navbar .logo img {
+        width: 4em;
+        height: 4em;
+    }
+
+    .navbar .logo .name h1 {
+        font-size: 1.5em;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .navbar .logo .name h1 {
+        display: none;
+    }
+}
+
+.swiper .swiper-wrapper .slider {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: var(--transition);
+}
+
+.swiper .swiper-wrapper .slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.swiper .swiper-wrapper .slider .text {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(90deg, var(--font-color), rgba(255, 255, 255, .1));
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 0 0 3em; 
+    transition: var(--transition);
+}
+
+.swiper .swiper-wrapper .slider .text h2 span:nth-child(1) {
+    font-family: var(--font-family);
+    font-size: 5em;
+    text-transform: uppercase;
+    color: #fff;
+    transition: var(--transition);
+}
+
+
+.swiper .swiper-wrapper .slider .text h2 span:nth-child(3) {
+    font-family: var(--font-family);
+    font-size: 2.5em;
+    text-transform: capitalize;
+    color: var(--bg-color);
+    transition: var(--transition);
+    line-height: .9em;
+}
+
+@media screen and (max-width: 996px) {
+    .swiper .swiper-wrapper .slider {
+        height: 60vh;
+    }
+}
+
+@media screen and (max-width: 867px) {
+    .swiper .swiper-wrapper .slider .text h2 {
+        font-size: 1em;
+        line-height: 1.3em;
+    }
+    
+    .swiper .next,
+    .swiper .prev {
+        font-size: 1px;
+    }
+}
+
+@media screen and (max-width: 812px) {
+    .swiper .swiper-wrapper .slider .text h2 span:nth-child(1) {
+        font-size: 4em;
+        line-height: 1em;
+    }
+
+    .swiper .swiper-wrapper .slider .text h2 span:nth-child(3) {
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .swiper .swiper-wrapper .slider .text {
+        width: 90%;
+        padding: 1em;
+    }
+
+    .swiper .swiper-wrapper .slider .text h2 span:nth-child(1) {
+        font-size: 3em;
+        line-height: 1em;
+    }
+
+    .swiper .swiper-wrapper .slider .text h2 span:nth-child(3) {
+        font-size: 1.5em;
+        font-weight: 100;
+    }
+}
+
+.class {
+    width: 100%;
+    height: auto;
+}
+
+.class h1 {
+    font-family: var(--font-family);
+    font-size: 2em;
+    text-transform: capitalize;
+    color: var(--font-color);
+    text-align: center;
+    margin: 1em 0;
+}
+
+.class .class-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5em 3em;
+    transition: var(--transition);
+}
+
+
+.class .class-container [class^="box-"] {
+    width: 33%;
+    height: auto;
+    transition: var(--transition);
+    margin-bottom: 1.3em;
+    border-bottom: 3px solid var(--font-color);
+}
+
+.class .class-container [class^="box-"] .image {
+    width: 100%;
+    color: #ae3ec9;
+}
+
+.class .class-container [class^="box-"] img {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+}
+
+.class .class-container [class^="box-"] article {
+    width: 100%;
+}
+
+.class .class-container [class^="box-"] article h3 {
+    text-align: center;
+    font-weight: 700;
+    font-family: var(--font-family);
+    color: var(--font-color);
+    text-transform: capitalize;
+    font-size: 1.5em;
+    padding: .9em 0;
+}
+
+.class .class-container [class^="box-"] article p {
+    font-family: var(--font-family);
+    line-height: var(--line-height);
+    color: var(--black-font);
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+@media screen and (max-width: 1028px) {
+    .class .class-container {
+        flex-wrap: wrap;
+    }
+
+    .class .class-container [class^="box-"] {
+        width: 49%;
+    }
+}
+
+@media screen and (max-width: 728px) {
+    .class h1 {
+        font-size: 1.5em;
+    }
+    .class .class-container [class^="box-"] article h3 {
+        padding: .5em 0;
+    }
+
+    .class .class-container {
+        padding: .5em 1em;
+    }
+
+
+    .class .class-container [class^="box-"] article h3 {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 541px) {
+    .class .class-container [class^="box-"] {
+        width: 100%;
+    }
+}
+
+.about {
+    width: 100%;
+    height: auto;
+    padding: 3em 0;
+    background: var(--bg-color-2);
+    margin: 1.5em 0;
+}
+
+.about .about-container {
+    width: 100%;
+    height: auto;
+    padding: .9em 4em;
+    display: flex;
+    justify-content: space-between;
+    align-items: self-start;
+}
+
+.about .about-container .about-1 {
+    display: flex;
+    align-items: center;
+}
+
+
+.about .about-container .about-1 h2 {
+    font-family: var(--font-family);
+    font-size: 2em;
+    text-transform: capitalize;
+    color: var(--font-color);
+    text-align: center;
+    margin: 1em 0;
+}
+
+.about .about-container .about-text {
+    font-family: var(--font-family);
+    color: var(--black-font);
+    line-height: var(--line-height);
+    max-width: 60%;
+}
+
+.about .about-container .about-text p {
+    line-height: 2em;
+    margin: 1.7em 0;
+}
+
+@media screen and (max-width: 1064px) {
+    .about .about-container .about-1 h2 {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 856px) {
+    .about .about-container {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .about .about-container .about-text  {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 728px) {
+    .about .about-container {
+        padding: .5em 1em;
+    }
+}
+
+.acty-container{
+    width: 100%;
+    height: auto;
+}
+
+.acty-container h2 {
+    font-family: var(--font-family);
+    font-size: 2em;
+    text-transform: capitalize;
+    color: var(--font-color);
+    text-align: center;
+    margin: 1em 0;
+}
+
+
+.acty-container .all-sections {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+    padding: 0 3em;
+    flex-wrap: wrap;
+    transition: var(--transition);
+}
+
+.acty-container .all-sections .section {
+    width: 32%;
+    height: auto;
+    background-color: var(--bg-color);
+    transition: var(--transition);
+    margin-bottom: 1.3em;
+    padding-bottom: .9em;
+    border-radius: 8px;
+}
+
+.acty-container .all-sections .section .img {
+    width: 100%;
+    height: 30vh;
+    position: relative;
+}
+
+.acty-container .all-sections .section .img::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.acty-container .all-sections .section .img:hover:before {
+    opacity: 0.5;
+}
+
+.acty-container .all-sections .section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.acty-container .all-sections .section ul {
+    list-style: none;
+    text-align: center;
+    padding: .2em;
+}
+
+.acty-container .all-sections .section ul li h3 {
+    font-family: var(--font-family);
+    color: var(--font-color);
+    text-transform: capitalize;
+    margin: .7em 0;
+}
+
+.acty-container .all-sections .section ul li p {
+    font-family: var(--font-family);
+    color: var(--black-font);
+    line-height: var(line);
+    line-height: var(--line-height);
+}
+
+.acty-container .all-sections .section ul li p span {
+    color: var(--font-color)
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    padding: 1em 0;
+}
+
+.btn a {
+    color: var(--bg-color);
+    font-family: var(--font-family);
+    text-decoration: none;
+    font-size: 1em;
+    text-transform: capitalize;
+    padding: 1em 2em;
+    background: var(--font-color);
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.btn a:hover {
+    opacity: .9;
+}
+
+@media screen and (max-width: 1028px) {
+    .class .class-container {
+        flex-wrap: wrap;
+    }
+
+    .acty-container .all-sections .section{
+        width: 49%;
+    }
+}
+
+@media screen and (max-width: 728px) {
+    .acty-container .all-sections {
+        padding:  1em;
+    }
+
+    .acty-container h2 {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 541px) {
+    .acty-container .all-sections .section {
+        width: 100%;
+    }
+}
+
+.teacher-container {
+    width: 100%;
+    height: auto;
+    padding: 2.5em 0;
+    background: var(--bg-color-2);
+}
+
+.teacher-container .teacher-logo {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.teacher-container .teacher-logo img {
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+}
+
+.teacher-container .teacher-logo h2 {
+    font-family: var(--font-family);
+    color: var(--font-color);
+    text-transform: capitalize;
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+.teacher-container .teacher-section {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+    padding: 0 3em;
+    flex-wrap: wrap;
+    transition: var(--transition);
+}
+
+.teacher-container .teacher-section [class^="section-"] {
+    width: 32%;
+    height: auto;
+    background-color: var(--bg-color);
+    transition: var(--transition);
+    margin-bottom: 1.3em;
+    padding-bottom: .9em;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.teacher-container .teacher-section [class^="section-"] .img {
+    width: 100%;
+    height: 30vh;
+}
+
+.teacher-container .teacher-section [class^="section-"] .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.teacher-container .teacher-section [class^="section-"] .article {
+    text-align: center;
+    padding: .2em;
+}
+
+.teacher-container .teacher-section [class^="section-"] .article h3 {
+    font-family: var(--font-family);
+    color: var(--font-color);
+    text-transform: capitalize;
+    margin: .7em 0;
+}
+
+.teacher-container .teacher-section [class^="section-"] .article p {
+    font-family: var(--font-family);
+    color: var(--black-font);
+    line-height: var(line);
+    line-height: var(--line-height);
+    text-transform: capitalize;
+}
+
+@media screen and (max-width: 1028px) {
+    .teacher-container .teacher-section [class^="section-"] {
+        width: 49%;
+    }
+}
+
+@media screen and (max-width: 728px) {
+    .teacher-container {
+        padding: 1em 0;
+    }
+
+    .teacher-container .teacher-section {
+        padding:  1em;
+    }
+
+    .teacher-container .teacher-logo h2 {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 541px) {
+    .teacher-container .teacher-section [class^="section-"] {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 405px) {
+    .teacher-container .teacher-section [class^="section-"] .img {
+        height: 25vh;
+    }
+}
+
+.contact-container {
+    width: 100%;
+    height: auto;
+    padding: 3em 0;
+    transition: var(--transition);
+}
+
+.contact-container .text {
+    text-align: center;
+}
+
+.contact-container .text h2 {
+    font-size: 3em;
+    font-family: 700;
+    font-family: var(--font-family);
+    margin-bottom: .4em;
+    transition: var(--transition);
+}
+
+.contact-container .text p {
+    font-family: var(--font-family);
+    color: var(--black-font);
+    margin-bottom: .8em;
+}
+
+.contact-container form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 70%;
+    transition: var(--transition);
+}
+
+.contact-container form input,
+.contact-container form textarea {
+    width: 100%;
+    height: auto;
+    font-size: 1em;
+    padding: 1.2em;
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid var(--bg-color);
+    margin: .5em 0;
+    color: var(--font-color);
+    transition: var(--transition);
+}
+
+.contact-container form input::-webkit-inner-spin-button {
+    display: none;
+}
+
+.contact-container form input:focus,
+.contact-container form textarea:focus {
+    border: 2px solid var(--font-color);
+}
+
+.contact-container form input::placeholder,
+.contact-container form textarea::placeholder {
+    font-family: var(--font-family);
+    font-size: .8em;
+}
+
+.contact-container form button {
+    width: 50%;
+    height: auto;
+    padding: 1em 0;
+    transition: var(--transition);
+    font-size: 1em;
+    font-family: var(--font-family);
+    font-weight: 700;
+    text-transform: capitalize;
+    border: none;
+    color: var(--bg-color);
+    background-color: var(--font-color);
+    margin: .5em 0;;
+}
+
+.contact-container form button:hover {
+    color: var(--font-color);
+    background: var(--bg-color);
+}
+
+@media screen and (max-width: 700px) {
+    .contact-container .text h2 {
+        font-size: 2em;
+    }
+
+    .contact-container form  {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .contact-container .text h2 {
+        font-size: 1.5em;
+    }
+}
+
+footer  {
+    width: 100%;
+    height: auto;
+    background: var(--bg-color);
+    padding: 3em;
+    transition: var(--transition);
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .footer-1  {
+    width: 30%;
+    height: auto;
+    margin: 1em 0;
+    transition: var(--transition );
+}
+
+footer .footer-1 .logo {
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+footer .footer-1 .logo img {
+    width: 5em;
+    height: 5em;
+    transition: var(--transition);
+}
+
+footer .footer-1 .logo .name h1 {
+    font-family: var(--font-family);
+    color: var(--font-color);
+    text-transform: capitalize;
+    transition: var(--transition);
+}
+
+footer .footer-1 address {
+    font-family: var(--font-family);
+    text-transform: capitalize;
+    line-height: var(--line-height);
+    color: var(--black-font);
+    max-width: 50%;
+}
+
+
+footer .footer-1 p {
+    display: flex;
+    align-items: center;
+    margin: .9em 0;
+    transition: var(--transition);
+}
+
+footer .footer-1 p .icon {
+    font-size: 1.2em;
+    color: #11f611;
+}
+
+footer .footer-1 p a {
+    font-family: var(--font-family);
+    font-weight: 600;
+    text-decoration: none;
+    color: #11f611;
+}
+
+footer .footer-1:nth-child(2) h2,
+footer .footer-1:nth-child(3) h2 {
+    font-family: var(--font-family);
+    text-transform: capitalize;
+    color: var(--font-color);
+    position: relative;
+}
+
+footer .footer-1:nth-child(2) h2::after,
+footer .footer-1:nth-child(3) h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30%;
+    height: 3px;
+    background-color: #ae3ec9;
+}
+
+footer .footer-1:nth-child(2) p {
+    font-family: var(--font-family);
+    line-height: var(--line-height);
+    color: var(--black-font);
+}
+
+footer .footer-1:nth-child(3) ul {
+    list-style: none;
+}
+
+footer .footer-1:nth-child(3) ul li {
+    margin: .5em 0;
+}
+
+footer .footer-1:nth-child(3) ul li a {
+    font-family: var(--font-family);
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1039px) {
+    footer  {
+        flex-wrap: wrap;
+    }
+    
+    footer .footer-1 {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 728px) {
+    footer {
+        padding: 1em;
+    }
+
+    footer .footer-1 address {
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 612px) {
+    footer .footer-1 {
+        width: 100%;
+    } 
+}
+
+.rights {
+    padding: 2em;
+    font-family: var(--font-family);
+    transition: var(--transition);
+}
+
+.rights a {
+    color: var(--font-color);
+}
+
+@media screen and (max-width: 728px) {
+    .rights {
+        padding: 1em;
+        line-height: var(--line-height);
+    }
+} 
